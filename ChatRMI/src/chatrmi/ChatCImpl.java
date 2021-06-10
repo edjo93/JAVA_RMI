@@ -11,9 +11,14 @@ import java.rmi.RemoteException;
  * @author Juan Leonardo
  */
 public class ChatCImpl extends UnicastRemoteObject implements ChatIC {
+    private MiChatWindow mcw;
     public ChatCImpl() throws RemoteException {}
+    public ChatCImpl(MiChatWindow mcw) throws RemoteException {
+        this.mcw = mcw;
+    }
     
     public void imprimirMensaje(String mensaje) throws RemoteException {
-        System.out.println("Mensaje: "+mensaje);
+        //System.out.println("Mensaje: "+mensaje);
+        mcw.mensajesTA.setText(mcw.mensajesTA.getText()+"\n"+mensaje);
     }    
 }

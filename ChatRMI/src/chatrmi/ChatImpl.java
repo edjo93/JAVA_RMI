@@ -16,7 +16,7 @@ public class ChatImpl extends UnicastRemoteObject implements ChatI {
     private Vector<ChatIC> clientes = null;
     public ChatImpl() throws RemoteException {
         clientes = new Vector();
-    }   
+    }
     
     public void registrarChatCallback(ChatIC chat)throws RemoteException {
         clientes.add(chat);

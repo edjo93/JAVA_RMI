@@ -27,7 +27,7 @@ public class ChatRMI {
             ChatI miChat = new ChatImpl();
             Registry reg = LocateRegistry.createRegistry(19000);
 //            ChatI stub = (ChatI) UnicastRemoteObject.exportObject(miChat, 0);
-            reg.rebind("michat", miChat);//  _stub
+            reg.rebind("michat", miChat);
             System.out.println("Servidor Iniciado");
         } catch (RemoteException ex) {
             System.out.println(ex.getMessage());          
